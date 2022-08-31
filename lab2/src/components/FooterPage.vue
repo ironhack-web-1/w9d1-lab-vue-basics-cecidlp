@@ -1,21 +1,37 @@
 <template>
   <form>
     <h2>This is my form:</h2>
-    <input type="text" class="login__input" placeholder="Name" /><br />
-    <input type="email" class="login__input" placeholder="Email" />
+    <input type="text" class="login__input" placeholder="Name" v-model="yourName"/><br />
+    <input type="email" class="login__input" placeholder="Email" v-model="yourEmail"/>
     <button class="button login__submit">
       <span class="button__text">Log In Now</span>
       <i class="button__icon fas fa-chevron-right"></i>
     </button>
   </form>
+  <div class="result">
+    <h2>This is the two-way data binding result</h2>
+    <p>Your name is: {{yourName}}</p>
+    <p>Your email is: {{yourEmail}}</p>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      yourName: '',
+      yourEmail: '',
+    }
+  }
+};
 </script>
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+
+.result {
+  font-family: Raleway;
+}
 
 form {
   font-family: Raleway;
@@ -68,4 +84,5 @@ form {
   cursor: pointer;
   transition: 0.2s;
 }
+
 </style>
