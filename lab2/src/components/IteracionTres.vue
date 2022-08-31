@@ -39,4 +39,7 @@ export default {
     .incorrect {
         color: #a62121;
     }
+    .correct {
+        color: #6BC659;
+    }
 </style>
